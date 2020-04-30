@@ -2,9 +2,7 @@ package pack2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class MyCuteProgram
 {
@@ -39,6 +37,30 @@ public class MyCuteProgram
         sc.close();
     }
 
+    void llAsQ()
+    {
+        LinkedList<String> names = new LinkedList<String>();
+        names.add("Me");
+        names.add("You");
+        names.add("Somebody else");
+
+        System.out.println(names.remove());
+        System.out.println(names.remove());
+        System.out.println(names.remove());
+    }
+
+    void llAsStack()
+    {
+        LinkedList<String> names = new LinkedList<String>();
+        names.push("Me2");
+        names.push("You2");
+        names.push("Somebody else2");
+
+        System.out.println(names.pop());
+        System.out.println(names.remove());
+        System.out.println(names.removeFirst());
+    }
+
     public static void main(String[] args) throws FileNotFoundException
     {
         MyCuteProgram myCuteProgram = new MyCuteProgram();
@@ -46,8 +68,8 @@ public class MyCuteProgram
 
         System.out.println("Enter 1: inputFromFile()");
         System.out.println("Enter 2: inputFromFile2()");
-        System.out.println("Enter 3: ");
-        System.out.println("Enter 4: ");
+        System.out.println("Enter 3: llAsQ()");
+        System.out.println("Enter 4: llAsStack()");
         System.out.println("Enter 5: ");
         System.out.println("Enter 6: ");
         System.out.println("Enter 7: ");
@@ -59,20 +81,28 @@ public class MyCuteProgram
 
         int num = sc.nextInt();
 
-        switch(num)
+        switch (num)
         {
-            case 1:
+            case 1 -> {
                 System.out.println("Calling Method-1... \n");
                 myCuteProgram.inputFromFile();
-                break;
-
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("Calling Method-2... \n");
                 myCuteProgram.inputFromFile2();
-                break;
-
-            default:
-                System.out.println("\nTry again later!\n");
+            }
+            case 3 -> {
+                System.out.println("Calling Method-3... \n");
+                myCuteProgram.llAsQ();
+            }
+            case 4 -> {
+                System.out.println("Calling Method-4... \n");
+                myCuteProgram.llAsStack();
+            }
+            case 5 -> {
+                
+            }
+            default -> System.out.println("\nTry again later!\n");
         }
     }
 }
